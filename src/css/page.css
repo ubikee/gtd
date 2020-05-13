@@ -1,0 +1,13 @@
+.page6 {
+    --page-menu-width: 20rem;
+    --page-menu-color: #111;
+    --page-menu-bgcolor: inherit;
+    /*
+    --page-header-height: 4rem;
+    --page-nav-height: 3rem;
+    --page-aside-width: 10rem;
+    --page-aside-color: #111;
+    --page-aside-bgcolor: #EEE;
+    --page-footer-height: 3rem;
+    */
+}

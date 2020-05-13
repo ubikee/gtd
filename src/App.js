@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Site, Page } from 'ywana-core6'
+import { AppContextProvider } from './AppContext'
+import Inbox from './pages/inbox/page'
+import Login from './pages/login/page'
 
-function App() {
+/**
+ * Site
+ */
+const AppSite = () => {
+
+  const init = 'LOGIN'
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Site title="Ubikee GTD" init={init} min>
+      <Page id="INBOX" section="AGENT" icon="inbox" title="Bandeja" layout="workspace">
+        <Inbox />
+      </Page>
+      <Page id="LOGIN" section="APP" icon="exit_to_app" layout="page">
+            <Login landingPage="INBOX" user="jeroldan@ywana.com" pwd="12345678"/>
+        </Page>
+    </Site>
+  )
+}
+
+/**
+ * App
+ */
+const App = (props) => {
+  return (
+    <AppContextProvider>
+      <AppSite />
+    </AppContextProvider>
+  )
 }
 
 export default App;
+
